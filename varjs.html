@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Variable Data</title>
+</head>
+<body>
+ <script>
+    //35 varible data type
+    //Primitive-String,number,boolean,null,underfined,symbol etc.
+  var name="ABES";
+  console.log(name);
+  console.log(typeof(name));
+  let courceDone= false;
+  console.log(courceDone);
+  console.log(typeof(courceDone))
+  let myCot=9999974572344;
+  console.log(myCot);
+  console.log(typeof(myCot));
+  let add=null;
+  console.log(add);
+  console.log(typeof(add));
+  let email;
+  console.log(email);
+  console.log(typeof(email));
+  //Bigint
+  let bigAmount=BigInt(123456789987654321213456789);
+  console.log(bigAmount);
+  console.log(typeof(bigAmount));
+  //Symbol- A unique primitive identifier
+  //The Javascript E56 introduced a new primitive data type called symbol. Symbol are
+  //immutable(cannot be changed) and are unique.
+  let val1=Symbol();
+  let val2=Symbol();
+  console.log(val1===val2);
+  //Refrence or Non primitive - defined in pair i.e. ket and value
+  //object {}, funtion{} and array[]
+  let myInfo={
+    name:"Abhay", mob:34567894567, isMarried:false,eMail:"abhay123@gmail",address:null
+  }
+  //acess object's keys
+  console.log(myInfo);
+  console.log(myInfo.name)
+
+  function hello(){
+  let myName="ABES EC";
+  console.log(myName);
+  console.log(typeof(hello));
+  }
+  //array
+  let student=["name1","name2","name3"];
+  console.log(student);
+ </script>   
+</body>
+</html>

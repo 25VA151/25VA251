@@ -18,17 +18,17 @@
     }
     
     demo();//function calling
-    function cal1(){
-        console.log("Addition of two numbers is" + (a+b))
+    function cal1(a,b){
+        console.log("Addition of two numbers is" + (a+b));
     }
     demo1();
-    cal1(12);
+    cal1(1,4);
     demo();
     //anonymous funtion important
      let add=(a,b)=>{
         console.log("First number is" + a) ;
         console.log("Secound number is " + b );
-        console.log("Addition of two is " + (a+b))
+        console.log("Addition of two is " + (a+b));
      }
      //callback function:-
      function mul(callback){
@@ -44,16 +44,17 @@
 
      }
      function msg(){
-        document.writeIn("Hello");
+        document.write("Hello");
      }
      function loading(){
-        document.writeIn("loading...................")
-     };
+        document.write("loading...................")
+     }
      setTimeout(msg,2000);
      loading();
      //nap filter reduce
      let num=[1,2,4,5];
-     let finalResult=num.nup(n=>n*2)
+     let finalResult=num.map(n=>n*2);
+     console.log(finalResult);
 
 
 
@@ -62,7 +63,25 @@
 
 
      //Promises stge
-     
+    
+
+        
+
+
+
+        //async await
+        async function userData(){
+            try{
+                let data=await fetch('https://dummyjson.com/products');
+                let updatedData=await data.json();
+                console.log(updatedData);
+
+            }
+            catch(error){
+                console.log("Not fetched " + error);
+            }
+        }
+        userData();
     
     </script>
 </body>

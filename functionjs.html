@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in 25</title>
+</head>
+<body>
+    <script>
+    //function in jawasript, a function is a reusable block of code designed to perform a specific task.
+    //normal fuction
+    //without parameters
+    function demo(){
+        console.log("Hello 25")};
+       
+    function demo1(){
+        console.log("text")
+    }
+    
+    demo();//function calling
+    function cal1(){
+        console.log("Addition of two numbers is" + (a+b))
+    }
+    demo1();
+    cal1(12);
+    demo();
+    //anonymous funtion important
+     let add=(a,b)=>{
+        console.log("First number is" + a) ;
+        console.log("Secound number is " + b );
+        console.log("Addition of two is " + (a+b))
+     }
+     //callback function:-
+     function mul(callback){
+        var num1=10;
+        console.log("First value is " + null);
+        var num2=20;  
+        console.log("Secound value is " + null);
+        var res=num1*num2;
+        callback(res); 
+     }
+     function result(){
+        console.log("Multiply is " + res);
+
+     }
+     function msg(){
+        document.writeIn("Hello");
+     }
+     function loading(){
+        document.writeIn("loading...................")
+     };
+     setTimeout(msg,2000);
+     loading();
+     //nap filter reduce
+     let num=[1,2,4,5];
+     let finalResult=num.nup(n=>n*2)
+
+
+
+     let finalResult2=num.reduce((total,n)=>total+n );
+     console.log(finalResult2);
+
+
+     //Promises stge
+     
+    
+    </script>
+</body>
+</html>

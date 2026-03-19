@@ -1,0 +1,76 @@
+
+<html>
+<head>
+<title>Result Calculator</title>
+<style>
+body {
+font-family: Arial;
+text-align: center;
+background-color: #d1b3b3;
+}
+.container {
+background: white;
+padding: 20px;
+margin: 50px auto;
+width: 350px;
+border-radius: 10px;
+box-shadow: 0 0 10px gray;
+}
+input, button {
+margin: 5px;
+padding: 8px;
+width: 80%;
+}
+#marksInputs input {
+display: block;
+margin: 5px auto;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Result Calculator</h2>
+<input type="number" id="subjects" placeholder="Enter number of subjects">
+<button onclick="createInputs()">Enter Marks</button>
+<div id="marksInputs"></div>
+<button onclick="calculate()">Calculate Result</button>
+<div id="result"></div>
+</div>
+<script>
+function createInputs() {
+let n = document.getElementById("subjects").value;
+let container = document.getElementById("marksInputs");
+container.innerHTML = "";
+for (let i = 1; i <= n; i++) {
+container.innerHTML += 
+`<input type="number" id="m${i}" placeholder="Marks for subject ${i}">`;
+}
+}
+function calculate() {
+let n = document.getElementById("subjects").value;
+let total = 0;
+for (let i = 1; i <= n; i++) {
+let marks = parseFloat(document.getElementById("m" + i).value);
+if (isNaN(marks) || marks < 0 || marks > 100) {
+alert("Enter valid marks (0–100)");
+return;
+}
+total += marks;
+}
+let average = total / n;
+let grade, resultStatus;
+if (average >= 90) grade = "A+";
+else if (average >= 75) grade = "A";
+else if (average >= 60) grade = "B";
+else if (average >= 50) grade = "C";
+else grade = "F";
+resultStatus = (average >= 50) ? "Pass" : "Fail";
+document.getElementById("result").innerHTML =
+`Total Marks: ${total} <br>
+Average: ${average.toFixed(2)} <br>
+Grade: ${grade} <br>
+Result: ${resultStatus}`;
+}
+</script>
+</body>
+</html>

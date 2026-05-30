@@ -1,0 +1,46 @@
+import React from "react";
+import "./App.css";
+function Student(props){
+return(
+<div className="card">
+<h2>{props.name}</h2>
+<p>Course: {props.course}</p>
+<p>Marks: {props.marks}</p>
+</div>
+);}
+function App(){
+return(
+<div className="container">
+<h1>Student Details</h1>
+<Student name="Rahul" course="BCA" marks="85"/>
+<Student name="Priya" course="B.Tech" marks="92"/>
+<Student name="Aman" course="MCA" marks="78"/>
+</div>
+);
+}
+export default App;
+/* App.css */
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+}
+.container{
+text-align:center;
+margin-top:50px;
+}
+.card{
+background:white;
+width:300px;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+h1{
+color:#333;
+}
+h2{
+color:#007bff;
+}

@@ -1,0 +1,39 @@
+App.js
+import React,{useState} from "react";
+function App(){
+const[formData,setFormData]=useState({name:"",email:"",password:""});
+const[errors,setErrors]=useState({});
+const[success,setSuccess]=useState("");
+const handleChange=(e)=>{
+setFormData({...formData,[e.target.name]:e.target.value});};
+const handleSubmit=(e)=>{
+e.preventDefault();
+let temp={};
+if(formData.name==="")temp.name="Name required";
+if(!formData.email.includes("@"))temp.email="Invalid Email";
+if(formData.password.length<6)temp.password="Min 6 chars";
+if(Object.keys(temp).length>0){
+setErrors(temp);
+setSuccess("");
+}else{
+setErrors({});
+setSuccess("Registration Successful");}};
+return(
+<div style={{display:"flex",justifyContent:"center",marginTop:"50px",fontFamily:"Arial"}}>
+<form onSubmit={handleSubmit} style={{border:"1px solid 
+#ccc",padding:"20px",width:"300px"}}>
+<h2>Registration Form</h2>
+<input type="text" name="name" placeholder="Name" onChange={handleChange} 
+style={{width:"100%",marginTop:"10px"}}/>
+<p style={{color:"red"}}>{errors.name}</p>
+<input type="email" name="email" placeholder="Email" onChange={handleChange} 
+style={{width:"100%",marginTop:"10px"}}/>
+<p style={{color:"red"}}>{errors.email}</p>
+<input type="password" name="password" placeholder="Password" 
+onChange={handleChange} style={{width:"100%",marginTop:"10px"}}/>
+<p style={{color:"red"}}>{errors.password}</p>
+<button type="submit" style={{marginTop:"10px"}}>Submit</button>
+<p style={{color:"green"}}>{success}</p>
+</form>
+</div>);}
+export default App;

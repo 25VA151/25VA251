@@ -1,0 +1,46 @@
+abstract class BankAccount{
+private int accountNumber;
+private String accountHolderName;
+private double balance;
+public BankAccount(int accountNumber,String accountHolderName,double balance){
+this.accountNumber=accountNumber;
+this.accountHolderName=accountHolderName;
+this.balance=balance;}
+public double getBalance(){
+return balance;
+}
+public void deposit(double amount){
+balance+=amount;
+}
+abstract double calculateInterest();
+public void display(){
+System.out.println(accountNumber+" "+accountHolderName+" "+balance);
+}}
+class SavingsAccount extends BankAccount{
+public SavingsAccount(int a,String n,double b){
+super(a,n,b);
+}
+double calculateInterest(){
+return getBalance()*0.05;
+}
+}
+class CurrentAccount extends BankAccount{
+public CurrentAccount(int a,String n,double b){
+super(a,n,b);
+}
+double calculateInterest(){
+return getBalance()*0.03;
+}
+}
+public class BankManagementSystem{
+public static void main(String[] args){
+SavingsAccount s=new SavingsAccount(101,"Rahul",50000);
+CurrentAccount c=new CurrentAccount(102,"Priya",70000);
+s.deposit(5000);
+c.deposit(10000);
+s.display();
+System.out.println("Interest:"+s.calculateInterest());
+c.display();
+System.out.println("Interest:"+c.calculateInterest());
+}
+}
